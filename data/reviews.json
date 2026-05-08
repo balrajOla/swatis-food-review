@@ -1,56 +1,44 @@
 [
   {
-    "id": "sample-1",
-    "slug": "sunday-thali-notes",
-    "title": "Sunday thali notes",
-    "dek": "A warm vegetarian thali review focused on balance, service and the little details that make a meal memorable.",
-    "venue": "House of Spice",
-    "location": "London",
-    "rating": 4.7,
-    "category": "Indian",
-    "date": "2026-05-01",
-    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1400&q=80",
-    "tags": [
-      "vegetarian",
-      "thali",
-      "comfort"
-    ],
-    "body": "Swati looks for food that feels generous without being heavy. This thali had the right rhythm: bright chutneys, soft breads, fragrant dal and a dessert that ended the meal gently rather than loudly. The strongest point was balance \u2014 spice, texture and service all worked together."
+    "id": "linkedin-food-audit-3",
+    "slug": "daisys-in-the-park-pinner-food-audit",
+    "title": "The Food Audit #3: Daisy’s in the Park, Pinner",
+    "dek": "Swati brings her Food Audit lens back to Pinner after a Cambridge Italian precision review — focused on process, service flow and the small details that shape a meal.",
+    "venue": "Daisy’s in the Park",
+    "location": "Pinner",
+    "rating": 4.6,
+    "category": "Cafe Review",
+    "date": "2026-05-08",
+    "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=80",
+    "tags": ["the-food-audit", "pinner", "service", "cafe"],
+    "body": "Based on Swati’s public LinkedIn activity, this review belongs to her Food Audit series and brings the audit back to Pinner. The site is structured so Swati can replace this holding copy with her full approved LinkedIn post text and original images. The editorial angle is quality-focused: atmosphere, service flow, food consistency, presentation and whether the experience earns a return visit."
   },
   {
-    "id": "sample-2",
-    "slug": "brunch-with-a-view",
-    "title": "Brunch with a view",
-    "dek": "A bright cafe visit with good coffee, thoughtful plating and a few notes on value.",
-    "venue": "The Garden Table",
-    "location": "Hertfordshire",
-    "rating": 4.4,
-    "category": "Cafe",
-    "date": "2026-04-21",
-    "image": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=1400&q=80",
-    "tags": [
-      "brunch",
-      "coffee",
-      "family"
-    ],
-    "body": "The best brunch places understand pacing. The Garden Table gets the atmosphere right first: soft light, calm service and plates that arrive looking cared for. The coffee was excellent, the toast was crisp, and the only miss was a slightly long wait at peak time."
-  },
-  {
-    "id": "sample-3",
-    "slug": "street-food-favourite",
-    "title": "Street food favourite",
-    "dek": "Bold flavours, quick service and a stall worth returning to.",
-    "venue": "Market Masala",
-    "location": "London",
+    "id": "linkedin-food-audit-2",
+    "slug": "dulcis-gelato-pasticcini-cambridge-food-audit",
+    "title": "The Food Audit #2: Dulcis Gelato & Pasticcini, Cambridge",
+    "dek": "A masterclass in Italian precision: gelato, pasticcini and the systems behind a polished customer experience.",
+    "venue": "Dulcis Gelato & Pasticcini",
+    "location": "Cambridge",
     "rating": 4.8,
-    "category": "Street Food",
-    "date": "2026-04-10",
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1400&q=80",
-    "tags": [
-      "street-food",
-      "spice",
-      "quick-bite"
-    ],
-    "body": "This was the kind of street food that makes a short lunch feel like a discovery. The chaat was layered, crunchy and bright; the team moved fast without making the experience feel rushed. Great value and full of personality."
+    "category": "Dessert Review",
+    "date": "2026-05-02",
+    "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=1400&q=80",
+    "tags": ["the-food-audit", "cambridge", "gelato", "italian"],
+    "body": "Swati’s public LinkedIn preview describes this as a move from a weekend wind-down to a masterclass in Italian precision. This page is ready for the full review: what worked, what could improve, how the queue/service experience felt, and whether the product quality matched the presentation."
+  },
+  {
+    "id": "linkedin-food-audit-1",
+    "slug": "the-moon-harrow-food-audit",
+    "title": "The Food Audit #1: The Moon, Harrow",
+    "dek": "The first official Food Audit review, putting the menu and experience at The Moon in Harrow under Swati’s detail-focused lens.",
+    "venue": "The Moon",
+    "location": "Harrow",
+    "rating": 4.3,
+    "category": "Restaurant Review",
+    "date": "2026-04-25",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80",
+    "tags": ["the-food-audit", "harrow", "restaurant", "menu"],
+    "body": "This is the first item visible in Swati’s public Food Audit activity. The website treats it as the start of a repeatable review format: food, service, presentation, value and process. Full LinkedIn copy and original images can be imported once Swati provides access or exports the content."
   }
 ]
