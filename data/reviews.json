@@ -1,0 +1,56 @@
+[
+  {
+    "id": "sample-1",
+    "slug": "sunday-thali-notes",
+    "title": "Sunday thali notes",
+    "dek": "A warm vegetarian thali review focused on balance, service and the little details that make a meal memorable.",
+    "venue": "House of Spice",
+    "location": "London",
+    "rating": 4.7,
+    "category": "Indian",
+    "date": "2026-05-01",
+    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1400&q=80",
+    "tags": [
+      "vegetarian",
+      "thali",
+      "comfort"
+    ],
+    "body": "Swati looks for food that feels generous without being heavy. This thali had the right rhythm: bright chutneys, soft breads, fragrant dal and a dessert that ended the meal gently rather than loudly. The strongest point was balance \u2014 spice, texture and service all worked together."
+  },
+  {
+    "id": "sample-2",
+    "slug": "brunch-with-a-view",
+    "title": "Brunch with a view",
+    "dek": "A bright cafe visit with good coffee, thoughtful plating and a few notes on value.",
+    "venue": "The Garden Table",
+    "location": "Hertfordshire",
+    "rating": 4.4,
+    "category": "Cafe",
+    "date": "2026-04-21",
+    "image": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=1400&q=80",
+    "tags": [
+      "brunch",
+      "coffee",
+      "family"
+    ],
+    "body": "The best brunch places understand pacing. The Garden Table gets the atmosphere right first: soft light, calm service and plates that arrive looking cared for. The coffee was excellent, the toast was crisp, and the only miss was a slightly long wait at peak time."
+  },
+  {
+    "id": "sample-3",
+    "slug": "street-food-favourite",
+    "title": "Street food favourite",
+    "dek": "Bold flavours, quick service and a stall worth returning to.",
+    "venue": "Market Masala",
+    "location": "London",
+    "rating": 4.8,
+    "category": "Street Food",
+    "date": "2026-04-10",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1400&q=80",
+    "tags": [
+      "street-food",
+      "spice",
+      "quick-bite"
+    ],
+    "body": "This was the kind of street food that makes a short lunch feel like a discovery. The chaat was layered, crunchy and bright; the team moved fast without making the experience feel rushed. Great value and full of personality."
+  }
+]

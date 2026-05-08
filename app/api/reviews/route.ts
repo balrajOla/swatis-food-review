@@ -1,0 +1,3 @@
+import { NextResponse } from 'next/server'; import { createReview, getReviews } from '@/lib/reviews'; import { isAdmin } from '@/lib/auth';
+export async function GET(){ return NextResponse.json(await getReviews()); }
+export async function POST(req: Request){ if(!(await isAdmin())) return NextResponse.json({error:'Unauthorized'}, {status:401}); const body=await req.json(); for(const key of ['title','dek','venue','location','rating','category','image','body']) if(!body[key]) return NextResponse.json({error:`Missing ${key}`},{status:400}); const review=await createReview(body); return NextResponse.json(review, {status:201}); }
