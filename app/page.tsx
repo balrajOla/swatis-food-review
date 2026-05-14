@@ -1,2 +1,348 @@
-import { getReviews } from '@/lib/reviews'; import { ReviewCard } from '@/components/ReviewCard'; import Link from 'next/link';
-export default async function Home(){ const reviews = await getReviews(); const [lead,...rest]=reviews; return <main><section className="mx-auto max-w-7xl px-5 py-16 md:py-24"><div className="grid items-end gap-10 md:grid-cols-[1.05fr_.95fr]"><div className="reveal"><p className="text-xs uppercase tracking-[.35em] text-clay">Food reviewer · London & beyond</p><h1 className="mt-5 font-serif text-6xl leading-[.94] md:text-8xl">Notes on food, places and feeling.</h1></div><p className="reveal text-lg leading-9 text-ink/62">A calm editorial home for Swati’s restaurant reviews: honest observations, beautiful photography, ratings, and memorable dishes — built to scale from a personal blog into a searchable review archive.</p></div></section><section className="bg-blush/70 px-5 py-16"><div className="mx-auto max-w-7xl"><p className="mb-8 text-xs uppercase tracking-[.35em] text-ink/45">Featured review</p>{lead && <div className="grid gap-8 md:grid-cols-[1.2fr_.8fr]"><ReviewCard review={lead} priority/><div className="rounded-[2rem] bg-cream p-9"><h2 className="font-serif text-4xl">Swati’s current pick</h2><p className="mt-5 leading-8 text-ink/62">A publication-style layout inspired by serene cookbook sites, with its own identity for food reviews rather than recipes.</p><Link className="mt-8 inline-flex rounded-full border border-ink/20 px-6 py-3 text-xs uppercase tracking-[.25em]" href="/reviews">View all reviews</Link></div></div>}</div></section><section className="mx-auto max-w-7xl px-5 py-20"><p className="mb-8 text-xs uppercase tracking-[.35em] text-ink/45">Latest reviews</p><div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{rest.slice(0,6).map(r=><ReviewCard key={r.id} review={r}/>)}</div></section></main> }
+import Link from 'next/link';
+import Image from 'next/image';
+import { getReviews } from '@/lib/reviews';
+import ReviewCard from '@/components/ReviewCard';
+import ScrollReveal from '@/components/ScrollReveal';
+
+const HERO_PANELS = [
+  {
+    num: '01',
+    title: 'THE MOON',
+    location: 'HARROW',
+    slug: 'the-moon-harrow-food-audit',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    num: '02',
+    title: 'DULCIS GELATO',
+    location: 'CAMBRIDGE',
+    slug: 'dulcis-gelato-pasticcini-cambridge-food-audit',
+    image: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    num: '03',
+    title: "DAISY'S IN THE PARK",
+    location: 'PINNER',
+    slug: 'daisys-in-the-park-pinner-food-audit',
+    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80',
+  },
+];
+
+const AUDIT_ROWS = [
+  { criteria: 'PRODUCT INTEGRITY', detail: "Does the meal live up to the brand's promise?" },
+  { criteria: 'OPERATIONAL FLOW',  detail: 'How efficient is service from order to table?' },
+  { criteria: 'SENSORY QC',         detail: "The human details data can't capture." },
+  { criteria: 'ATMOSPHERE',         detail: 'Location, vibe, and user personas served.' },
+  { criteria: 'VALUE',              detail: 'Does the experience justify the price?' },
+];
+
+export default async function HomePage() {
+  const reviews = await getReviews();
+  const [featured, ...rest] = reviews;
+  const sideCards = rest.slice(0, 2);
+
+  return (
+    <>
+      {/* ===== SECTION 1: HERO PANELS ===== */}
+      <section
+        className="relative flex"
+        style={{ minHeight: '100vh' }}
+      >
+        {/* Brand name overlay */}
+        <div
+          className="absolute top-8 left-8 z-20 pointer-events-none"
+          style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            color: 'var(--color-white)',
+            fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+            letterSpacing: '0.06em',
+            lineHeight: 1.1,
+            textShadow: '0 2px 12px rgba(0,0,0,0.5)',
+          }}
+        >
+          SWATI&apos;S<br />FOOD REVIEW
+        </div>
+
+        {HERO_PANELS.map((panel, i) => (
+          <Link
+            key={panel.slug}
+            href={`/reviews/${panel.slug}`}
+            className="hero-panel group"
+            style={{ flex: 1 }}
+          >
+            {/* Background image */}
+            <div className="absolute inset-0">
+              <Image
+                src={panel.image}
+                alt={panel.title}
+                fill
+                priority={i === 0}
+                sizes="33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                unoptimized
+              />
+            </div>
+
+            {/* Dark overlay */}
+            <div
+              className="hero-panel-overlay absolute inset-0 transition-opacity duration-500"
+              style={{ backgroundColor: 'rgba(16,16,16,0.55)' }}
+            />
+
+            {/* Panel content */}
+            <div className="absolute inset-0 flex flex-col justify-between p-8 z-10">
+              {/* Outlined number */}
+              <div
+                className="text-right"
+                style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 'clamp(4rem, 8vw, 7rem)',
+                  lineHeight: 1,
+                  color: 'transparent',
+                  WebkitTextStroke: '2px rgba(255,255,255,0.7)',
+                  letterSpacing: '-0.02em',
+                  marginTop: '4rem',
+                }}
+              >
+                {panel.num}
+              </div>
+
+              {/* Bottom text */}
+              <div className="pb-2">
+                <div
+                  className="text-xs uppercase tracking-widest mb-2 opacity-70"
+                  style={{
+                    fontFamily: 'Inter, system-ui, sans-serif',
+                    color: 'var(--color-cream)',
+                  }}
+                >
+                  {panel.location}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                    color: 'var(--color-white)',
+                    lineHeight: 1.1,
+                    letterSpacing: '0.04em',
+                  }}
+                >
+                  {panel.title}
+                </div>
+              </div>
+            </div>
+          </Link>
+        ))}
+
+        {/* Bottom CTA */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+          <Link href="/reviews" className="btn-ghost">
+            READ ALL REVIEWS
+          </Link>
+        </div>
+      </section>
+
+      {/* ===== SECTION 2: TAGLINE BAND ===== */}
+      <section
+        className="py-24 px-8 text-center"
+        style={{ backgroundColor: 'var(--color-dark)' }}
+      >
+        <ScrollReveal>
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+              color: 'var(--color-white)',
+              letterSpacing: '0.04em',
+              lineHeight: 1.05,
+            }}
+          >
+            AI CAN&apos;T TASTE.<br />A QUALITY ENGINEER CAN.
+          </h2>
+          <p
+            className="max-w-2xl mx-auto text-base md:text-lg leading-relaxed opacity-70"
+            style={{
+              fontFamily: "'Special Elite', Georgia, serif",
+              color: 'var(--color-cream)',
+            }}
+          >
+            I apply a quality engineering lens to every visit &mdash; product integrity,
+            operational flow, sensory quality control.
+          </p>
+        </ScrollReveal>
+      </section>
+
+      {/* ===== SECTION 3: FEATURED REVIEWS EDITORIAL GRID ===== */}
+      <section className="section-cream py-20 px-8">
+        <div className="max-w-screen-xl mx-auto">
+
+          <ScrollReveal>
+            <div className="flex items-end justify-between mb-12 border-b pb-4" style={{ borderColor: 'var(--color-border)' }}>
+              <h2
+                style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                  color: 'var(--color-dark)',
+                  letterSpacing: '0.04em',
+                }}
+              >
+                LATEST REVIEWS
+              </h2>
+              <Link
+                href="/reviews"
+                className="text-xs uppercase tracking-widest hover:opacity-60 transition-opacity"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif', color: 'var(--color-primary)' }}
+              >
+                VIEW ALL &rarr;
+              </Link>
+            </div>
+          </ScrollReveal>
+
+          {/* Asymmetric 2-col grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            {/* Featured large card */}
+            {featured && (
+              <ScrollReveal delay={0}>
+                <ReviewCard review={featured} featured={true} />
+              </ScrollReveal>
+            )}
+
+            {/* Stacked smaller cards */}
+            <div className="flex flex-col gap-6">
+              {sideCards.map((review, i) => (
+                <ScrollReveal key={review.slug} delay={(i + 1) * 150}>
+                  <ReviewCard review={review} />
+                </ScrollReveal>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SECTION 4: AUDIT PHILOSOPHY TABLE ===== */}
+      <section className="section-green py-20 px-8">
+        <div className="max-w-screen-xl mx-auto">
+
+          <ScrollReveal>
+            <h2
+              className="mb-12 text-center"
+              style={{
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                color: 'var(--color-white)',
+                letterSpacing: '0.04em',
+              }}
+            >
+              THE AUDIT CRITERIA
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <table className="audit-table max-w-3xl mx-auto">
+              <thead>
+                <tr style={{ borderBottom: '2px solid rgba(255,255,255,0.35)' }}>
+                  <td
+                    className="pb-3 text-sm uppercase tracking-widest"
+                    style={{
+                      fontFamily: 'Inter, system-ui, sans-serif',
+                      color: 'rgba(255,255,255,0.5)',
+                    }}
+                  >
+                    CRITERIA
+                  </td>
+                  <td
+                    className="pb-3 text-sm uppercase tracking-widest"
+                    style={{
+                      fontFamily: 'Inter, system-ui, sans-serif',
+                      color: 'rgba(255,255,255,0.5)',
+                    }}
+                  >
+                    WHAT I LOOK FOR
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                {AUDIT_ROWS.map((row) => (
+                  <tr key={row.criteria}>
+                    <td>{row.criteria}</td>
+                    <td>{row.detail}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <div className="text-center mt-14">
+              <Link href="/reviews" className="btn-primary">
+                READ THE REVIEWS
+              </Link>
+            </div>
+          </ScrollReveal>
+
+        </div>
+      </section>
+
+      {/* ===== SECTION 5: ABOUT STRIP ===== */}
+      <section className="section-blush py-20 px-8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left text */}
+            <ScrollReveal>
+              <div>
+                <h2
+                  className="mb-6 leading-none"
+                  style={{
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                    color: 'var(--color-dark)',
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  SWATI KHARBANDA &mdash;<br />QUALITY ENGINEER<br />&amp; FOOD REVIEWER
+                </h2>
+                <p
+                  className="text-base md:text-lg leading-relaxed mb-8 opacity-80"
+                  style={{
+                    fontFamily: "'Special Elite', Georgia, serif",
+                    color: 'var(--color-text)',
+                  }}
+                >
+                  The Food Audit applies a quality engineering lens to the dining experience.
+                  Every visit is a structured evaluation &mdash; measuring product integrity,
+                  operational flow, sensory quality control, and value. Because great food
+                  deserves more than a star rating.
+                </p>
+                <Link href="/about" className="btn-outline">
+                  ABOUT THE REVIEWER
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            {/* Right image */}
+            <ScrollReveal delay={200}>
+              <div
+                className="relative h-80 lg:h-[26rem] rounded-sm overflow-hidden hover-zoom"
+                style={{ borderRadius: '6px' }}
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+                  alt="Food photography"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  unoptimized
+                />
+              </div>
+            </ScrollReveal>
+
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
