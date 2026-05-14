@@ -44,17 +44,79 @@ export default async function HomePage() {
   return (
     <>
       {/* ===== SECTION 1: HERO PANELS ===== */}
-      <section
-        className="relative flex min-h-[calc(100vh-104px)] overflow-hidden md:min-h-screen"
-      >
+      <section className="md:hidden">
+        <div className="overflow-x-auto px-5 pt-5 hero-mobile-scroll">
+          <div className="flex w-max gap-4 pb-4">
+            {HERO_PANELS.map((panel, i) => (
+              <Link
+                key={panel.slug}
+                href={`/reviews/${panel.slug}`}
+                className="hero-panel group relative h-[68svh] min-h-[520px] w-[84vw] shrink-0 snap-start overflow-hidden rounded-[8px]"
+              >
+                <Image
+                  src={panel.image}
+                  alt={panel.title}
+                  fill
+                  priority={i === 0}
+                  sizes="84vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  unoptimized
+                />
+                <div className="hero-panel-overlay absolute inset-0 transition-opacity duration-500" style={{ backgroundColor: 'rgba(16,16,16,0.55)' }} />
+                <div className="absolute inset-0 z-10 flex flex-col justify-between p-5">
+                  <div
+                    className="text-right"
+                    style={{
+                      fontFamily: "'Bebas Neue', sans-serif",
+                      fontSize: 'clamp(5.5rem, 24vw, 9rem)',
+                      lineHeight: 0.9,
+                      color: 'transparent',
+                      WebkitTextStroke: '2px rgba(255,255,255,0.4)',
+                      letterSpacing: '-0.02em',
+                      marginTop: '2.5rem',
+                    }}
+                  >
+                    {panel.num}
+                  </div>
+
+                  <div className="hero-panel-text pb-1">
+                    <div className="mb-2 font-ui text-[0.68rem] uppercase tracking-[0.22em] text-cream opacity-80">
+                      {panel.location}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: "'Bebas Neue', sans-serif",
+                        fontSize: 'clamp(2rem, 9vw, 3rem)',
+                        color: 'var(--color-white)',
+                        lineHeight: 1,
+                        letterSpacing: '0.04em',
+                      }}
+                    >
+                      {panel.title}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="px-5 pb-6 pt-1 text-center">
+          <p className="mb-4 font-ui text-[0.62rem] uppercase tracking-[0.24em] text-text-muted">Swipe through featured audits</p>
+          <Link href="/reviews" className="btn-outline">
+            READ ALL REVIEWS
+          </Link>
+        </div>
+      </section>
+
+      <section className="relative hidden min-h-screen overflow-hidden md:flex">
         {HERO_PANELS.map((panel, i) => (
           <Link
             key={panel.slug}
             href={`/reviews/${panel.slug}`}
-            className={`hero-panel group ${i > 0 ? 'hidden md:block' : 'block'}`}
+            className="hero-panel group"
             style={{ flex: 1 }}
           >
-            {/* Background image */}
             <div className="absolute inset-0">
               <Image
                 src={panel.image}
@@ -67,15 +129,12 @@ export default async function HomePage() {
               />
             </div>
 
-            {/* Dark overlay */}
             <div
               className="hero-panel-overlay absolute inset-0 transition-opacity duration-500"
               style={{ backgroundColor: 'rgba(16,16,16,0.55)' }}
             />
 
-            {/* Panel content */}
-            <div className="absolute inset-0 flex flex-col justify-between p-8 z-10">
-              {/* Outlined number */}
+            <div className="absolute inset-0 z-10 flex flex-col justify-between p-8 lg:p-10">
               <div
                 className="text-right"
                 style={{
@@ -91,15 +150,8 @@ export default async function HomePage() {
                 {panel.num}
               </div>
 
-              {/* Bottom text */}
-              <div className="hero-panel-text pb-2">
-                <div
-                  className="text-xs uppercase tracking-widest mb-2 opacity-70"
-                  style={{
-                    fontFamily: 'Inter, system-ui, sans-serif',
-                    color: 'var(--color-cream)',
-                  }}
-                >
+              <div className="hero-panel-text max-w-[18rem] pb-2 lg:max-w-[22rem]">
+                <div className="mb-2 font-ui text-xs uppercase tracking-widest text-cream opacity-70">
                   {panel.location}
                 </div>
                 <div
@@ -107,7 +159,7 @@ export default async function HomePage() {
                     fontFamily: "'Bebas Neue', sans-serif",
                     fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
                     color: 'var(--color-white)',
-                    lineHeight: 1.1,
+                    lineHeight: 1.05,
                     letterSpacing: '0.04em',
                   }}
                 >
@@ -118,8 +170,7 @@ export default async function HomePage() {
           </Link>
         ))}
 
-        {/* Bottom CTA */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2">
           <Link href="/reviews" className="btn-ghost">
             READ ALL REVIEWS
           </Link>

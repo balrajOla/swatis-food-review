@@ -333,6 +333,15 @@ img {
   transform: translateY(-4px);
 }
 
+.hero-mobile-scroll {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.hero-mobile-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* Sidebar brand vertical text — kept for potential re-use */
 .sidebar-brand {
   writing-mode: vertical-rl;
