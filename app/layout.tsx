@@ -58,11 +58,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <footer>
           <div className="section-green px-5 py-20 text-center sm:px-8 md:py-24">
-            <div className="footer-brand-float mb-6 font-display text-[4.6rem] leading-[0.9] tracking-wide text-white sm:text-8xl md:text-9xl lg:text-[10rem]">
-              SWATI&apos;S<br />FOOD REVIEW
+            <div className="footer-brand-float mb-6 font-display text-[4.8rem] leading-[0.9] tracking-wide text-white sm:text-8xl md:text-9xl lg:text-[10rem]">
+              THE FOOD<br />AUDIT
             </div>
-            <p className="font-serif text-lg tracking-widest text-cream opacity-80 md:text-xl">THE FOOD AUDIT</p>
-            <p className="mx-auto mt-3 max-w-sm font-serif text-sm text-cream opacity-65">Quality engineering meets food culture.</p>
+            <p className="mx-auto max-w-2xl font-serif text-base leading-8 text-cream opacity-75 md:text-lg">
+              Quality engineering meets food culture — structured reviews for people who care about the details.
+            </p>
           </div>
 
           <div
