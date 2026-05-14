@@ -62,7 +62,7 @@ export default async function HomePage() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   unoptimized
                 />
-                <div className="hero-panel-overlay absolute inset-0 transition-opacity duration-500" style={{ backgroundColor: 'rgba(16,16,16,0.55)' }} />
+                <div className="hero-panel-overlay absolute inset-0 transition-opacity duration-500" style={{ backgroundColor: 'rgba(16,16,16,0.64)' }} />
                 <div className="absolute inset-0 z-10 flex flex-col justify-between p-5">
                   <div
                     className="text-right"
@@ -79,8 +79,8 @@ export default async function HomePage() {
                     {panel.num}
                   </div>
 
-                  <div className="hero-panel-text pb-1">
-                    <div className="mb-2 font-ui text-[0.68rem] uppercase tracking-[0.22em] text-cream opacity-80">
+                  <div className="hero-panel-text text-backer pb-1">
+                    <div className="mb-2 font-ui text-[0.68rem] uppercase tracking-[0.22em] text-cream opacity-90">
                       {panel.location}
                     </div>
                     <div
@@ -124,7 +124,7 @@ export default async function HomePage() {
 
             <div
               className="hero-panel-overlay absolute inset-0 transition-opacity duration-500"
-              style={{ backgroundColor: 'rgba(16,16,16,0.55)' }}
+              style={{ backgroundColor: 'rgba(16,16,16,0.62)' }}
             />
 
             <div className="absolute inset-0 z-10 flex flex-col justify-between p-8 lg:p-10">
@@ -143,8 +143,8 @@ export default async function HomePage() {
                 {panel.num}
               </div>
 
-              <div className="hero-panel-text max-w-[18rem] pb-8 lg:max-w-[22rem] lg:pb-10">
-                <div className="mb-2 font-ui text-xs uppercase tracking-widest text-cream opacity-70">
+              <div className="hero-panel-text text-backer max-w-[18rem] pb-8 lg:max-w-[22rem] lg:pb-10">
+                <div className="mb-2 font-ui text-xs uppercase tracking-widest text-cream opacity-90">
                   {panel.location}
                 </div>
                 <div

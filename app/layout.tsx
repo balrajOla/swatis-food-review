@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import MobileNav from '@/components/MobileNav';
+import ThemeToggle from '@/components/ThemeToggle';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -14,11 +15,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const marqueeContent = MARQUEE_TEXT.repeat(8);
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-cream">
         <header
           className="sticky top-0 z-50 border-b backdrop-blur-md"
-          style={{ backgroundColor: 'rgba(243,239,230,0.94)', borderColor: 'var(--color-border)' }}
+          style={{ backgroundColor: 'var(--color-header-bg)', borderColor: 'var(--color-border)' }}
         >
           <div className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
             <nav className="hidden items-center gap-6 md:flex">
@@ -33,7 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               SWATI&apos;S FOOD REVIEW
             </Link>
 
-            <div className="ml-auto flex items-center gap-4 text-dark">
+            <div className="ml-auto flex items-center gap-2 text-dark sm:gap-4">
+              <ThemeToggle />
               <Link className="hidden font-ui text-xs uppercase tracking-widest transition-opacity hover:opacity-60 md:inline-flex" href="/admin">PUBLISH</Link>
               <MobileNav />
             </div>

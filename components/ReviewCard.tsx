@@ -22,9 +22,7 @@ export default function ReviewCard({ review, featured = false }: ReviewCardProps
           unoptimized
         />
         {/* Overlay */}
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
-        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         {/* Rating badge */}
         <div className="absolute top-3 right-3">
           <span className="rating-badge">
@@ -32,15 +30,7 @@ export default function ReviewCard({ review, featured = false }: ReviewCardProps
           </span>
         </div>
         {/* Category */}
-        <div
-          className="absolute bottom-3 left-3 text-xs uppercase tracking-widest"
-          style={{
-            fontFamily: "'Bebas Neue', sans-serif",
-            color: 'var(--color-cream)',
-            letterSpacing: '0.15em',
-            fontSize: '0.75rem',
-          }}
-        >
+        <div className="image-text-backer absolute bottom-3 left-3 text-xs uppercase tracking-widest">
           {review.category}
         </div>
       </div>
@@ -53,7 +43,7 @@ export default function ReviewCard({ review, featured = false }: ReviewCardProps
           className="text-xs uppercase tracking-widest mb-3 opacity-60"
           style={{
             fontFamily: 'Inter, system-ui, sans-serif',
-            color: 'var(--color-text)',
+            color: 'var(--color-muted)',
           }}
         >
           {review.venue} &middot; {review.location}
@@ -64,7 +54,7 @@ export default function ReviewCard({ review, featured = false }: ReviewCardProps
           className={`mb-3 break-words leading-none transition-opacity group-hover:opacity-70 ${featured ? 'text-4xl' : 'text-3xl'}`}
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
-            color: 'var(--color-dark)',
+            color: 'var(--color-heading)',
           }}
         >
           {review.title}
@@ -75,7 +65,7 @@ export default function ReviewCard({ review, featured = false }: ReviewCardProps
           className="text-sm leading-relaxed mb-4 opacity-75 line-clamp-3"
           style={{
             fontFamily: "'Special Elite', Georgia, serif",
-            color: 'var(--color-text)',
+            color: 'var(--color-muted)',
           }}
         >
           {review.dek}
@@ -86,7 +76,7 @@ export default function ReviewCard({ review, featured = false }: ReviewCardProps
           className="text-xs uppercase tracking-widest opacity-50"
           style={{
             fontFamily: 'Inter, system-ui, sans-serif',
-            color: 'var(--color-text)',
+            color: 'var(--color-muted)',
           }}
         >
           {new Date(review.date).toLocaleDateString('en-GB', {
