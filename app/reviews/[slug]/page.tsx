@@ -33,7 +33,7 @@ export default async function ReviewPage({ params }: Props) {
   return (
     <>
       {/* ===== HERO IMAGE ===== */}
-      <section className="relative w-full" style={{ aspectRatio: '16 / 7', minHeight: '420px' }}>
+      <section className="relative aspect-video w-full min-h-[360px] overflow-hidden sm:min-h-[420px]">
         <Image
           src={review.image}
           alt={review.venue}
@@ -50,7 +50,7 @@ export default async function ReviewPage({ params }: Props) {
         />
 
         {/* Category + location top-left */}
-        <div className="absolute top-8 left-8 z-10">
+        <div className="absolute top-6 left-5 z-10 sm:left-8 sm:top-8">
           <span
             className="text-xs uppercase tracking-widest"
             style={{
@@ -64,7 +64,7 @@ export default async function ReviewPage({ params }: Props) {
         </div>
 
         {/* Title */}
-        <div className="absolute bottom-0 left-0 right-0 px-8 pb-10 z-10">
+        <div className="absolute bottom-0 left-0 right-0 z-10 px-5 pb-8 sm:px-8 sm:pb-10">
           <h1
             className="leading-none mb-3"
             style={{
@@ -92,7 +92,7 @@ export default async function ReviewPage({ params }: Props) {
       {/* ===== TAGS ===== */}
       {review.tags && review.tags.length > 0 && (
         <div
-          className="px-8 py-5 flex flex-wrap gap-2 border-b"
+          className="flex flex-wrap gap-2 border-b px-5 py-5 sm:px-8"
           style={{
             backgroundColor: 'var(--color-dark)',
             borderColor: 'rgba(255,255,255,0.1)',
@@ -118,7 +118,7 @@ export default async function ReviewPage({ params }: Props) {
       {/* ===== METADATA BAR ===== */}
       <ScrollReveal>
         <div
-          className="px-8 py-8 grid grid-cols-3 gap-6 border-b"
+          className="grid gap-6 border-b px-5 py-8 sm:px-8 md:grid-cols-3"
           style={{
             backgroundColor: 'var(--color-cream)',
             borderColor: 'var(--color-border)',
@@ -210,7 +210,7 @@ export default async function ReviewPage({ params }: Props) {
       </ScrollReveal>
 
       {/* ===== BODY TEXT ===== */}
-      <section className="section-cream py-16 px-8">
+      <section className="section-cream px-5 py-16 sm:px-8">
         <div className="max-w-2xl mx-auto">
           {paragraphs.map((para, i) => {
             const isHeading = para === para.toUpperCase() && para.length < 80 && !para.includes('.');
@@ -248,7 +248,7 @@ export default async function ReviewPage({ params }: Props) {
 
       {/* ===== BACK / FOOTER CTA ===== */}
       <section
-        className="py-16 px-8 text-center border-t"
+        className="border-t px-5 py-16 text-center sm:px-8"
         style={{
           backgroundColor: 'var(--color-blush)',
           borderColor: 'var(--color-border)',

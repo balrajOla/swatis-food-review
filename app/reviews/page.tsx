@@ -15,7 +15,7 @@ export default async function ReviewsPage() {
     <>
       {/* ===== HERO ===== */}
       <section
-        className="py-20 px-8 text-center"
+        className="px-5 py-20 text-center sm:px-8"
         style={{ backgroundColor: 'var(--color-primary)' }}
       >
         <p
@@ -51,12 +51,12 @@ export default async function ReviewsPage() {
       </section>
 
       {/* ===== REVIEWS GRID ===== */}
-      <section className="section-cream py-20 px-8">
+      <section className="section-cream px-5 py-20 sm:px-8">
         <div className="max-w-screen-xl mx-auto">
 
           <ScrollReveal>
             <div
-              className="flex items-center justify-between mb-12 border-b pb-4"
+              className="mb-12 flex flex-col gap-3 border-b pb-4 sm:flex-row sm:items-center sm:justify-between"
               style={{ borderColor: 'var(--color-border)' }}
             >
               <h2
@@ -108,7 +108,7 @@ export default async function ReviewsPage() {
 
       {/* ===== BOTTOM CTA ===== */}
       <section
-        className="py-16 px-8 text-center"
+        className="px-5 py-16 text-center sm:px-8"
         style={{ backgroundColor: 'var(--color-dark)' }}
       >
         <ScrollReveal>

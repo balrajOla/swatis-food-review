@@ -12,7 +12,7 @@ export default function ReviewCard({ review, featured = false }: ReviewCardProps
     <Link href={`/reviews/${review.slug}`} className="block group card-review">
 
       {/* Image */}
-      <div className={`hover-zoom relative w-full overflow-hidden ${featured ? 'h-80' : 'h-52'}`}>
+      <div className={`hover-zoom relative w-full overflow-hidden ${featured ? 'h-72 sm:h-80' : 'h-52'}`}>
         <Image
           src={review.image}
           alt={review.venue}
@@ -61,7 +61,7 @@ export default function ReviewCard({ review, featured = false }: ReviewCardProps
 
         {/* Title */}
         <h3
-          className={`leading-none mb-3 group-hover:opacity-70 transition-opacity ${featured ? 'text-4xl' : 'text-3xl'}`}
+          className={`mb-3 break-words leading-none transition-opacity group-hover:opacity-70 ${featured ? 'text-4xl' : 'text-3xl'}`}
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
             color: 'var(--color-dark)',

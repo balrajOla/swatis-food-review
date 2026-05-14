@@ -4,278 +4,119 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata = {
   title: "ABOUT — SWATI'S FOOD REVIEW",
-  description: "THE FOOD AUDIT — Swati Kharbanda, Quality Engineer & Food Reviewer based in London.",
+  description: "SWATI KHARBANDA — Quality Engineer & Food Auditor based in London.",
 };
+
+const experience = [
+  'Quality Engineer with experience across digital product teams.',
+  'Product Engineer in the Waitrose Digital team at John Lewis Partnership.',
+  'Specialises in test strategy, process improvement, and quality advocacy.',
+  'Has written about Quality Through Collaboration and Zero Defect culture.',
+  'Active voice in the quality engineering community, sharing certifications and industry insights on LinkedIn.',
+  'Certified across automated visual testing, API testing, and test leadership topics.',
+];
+
+const givesReaders = [
+  "Honest, structured food reviews from a quality engineer's perspective.",
+  'The Food Audit framework: product integrity, operational flow, sensory QC, atmosphere, and value.',
+  'A growing archive of London and beyond dining experiences.',
+  'An editorial alternative to star-rating apps — for people who care about the details.',
+];
 
 export default function AboutPage() {
   return (
     <>
-      {/* ===== HERO ===== */}
-      <section
-        className="py-28 px-8 text-center"
-        style={{ backgroundColor: 'var(--color-primary)' }}
-      >
+      <section className="px-5 py-20 text-center sm:px-8 md:py-28" style={{ backgroundColor: 'var(--color-primary)' }}>
         <ScrollReveal>
-          <p
-            className="text-xs uppercase tracking-widest mb-4 opacity-60"
-            style={{
-              fontFamily: 'Inter, system-ui, sans-serif',
-              color: 'var(--color-cream)',
-            }}
-          >
-            THE FOOD AUDIT
-          </p>
-          <h1
-            className="leading-none mb-4"
-            style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: 'clamp(4rem, 10vw, 9rem)',
-              color: 'var(--color-white)',
-              letterSpacing: '0.04em',
-            }}
-          >
+          <p className="mb-4 font-ui text-xs uppercase tracking-widest text-cream opacity-70">THE FOOD AUDIT</p>
+          <h1 className="font-display text-[4.5rem] leading-[0.9] tracking-[0.04em] text-white sm:text-8xl md:text-[9rem]">
             SWATI<br />KHARBANDA
           </h1>
-          <p
-            className="text-base md:text-xl tracking-wide opacity-80"
-            style={{
-              fontFamily: "'Special Elite', Georgia, serif",
-              color: 'var(--color-cream)',
-            }}
-          >
-            Quality Engineer &middot; Food Auditor &middot; London
+          <p className="mt-5 font-serif text-base tracking-wide text-cream opacity-85 md:text-xl">
+            Quality Engineer · Food Auditor · London
           </p>
         </ScrollReveal>
       </section>
 
-      {/* ===== PULL QUOTE ===== */}
-      <section className="section-cream py-20 px-8">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="section-cream px-5 py-16 sm:px-8 md:py-20">
+        <div className="mx-auto grid max-w-screen-xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <ScrollReveal>
-            <blockquote
-              className="text-center mb-20 max-w-4xl mx-auto"
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: 'clamp(2rem, 5vw, 4rem)',
-                color: 'var(--color-dark)',
-                letterSpacing: '0.04em',
-                lineHeight: 1.1,
-              }}
-            >
-              &ldquo;AI CAN&apos;T TASTE.<br />
-              DATA CAN&apos;T SMELL THE BREAD.<br />
-              A QUALITY ENGINEER CAN.&rdquo;
-            </blockquote>
+            <div className="relative mx-auto aspect-square w-full max-w-[420px] overflow-hidden rounded-[8px] shadow-card hover-zoom">
+              <Image
+                src="/swati-profile.jpg"
+                alt="SWATI KHARBANDA profile portrait"
+                fill
+                sizes="(max-width: 1024px) 90vw, 420px"
+                className="object-cover object-center"
+                priority
+              />
+            </div>
           </ScrollReveal>
 
-          {/* Two-column content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <ScrollReveal delay={120}>
+            <p className="mb-3 font-ui text-xs uppercase tracking-[0.25em] text-primary">London, England · 540 LinkedIn followers</p>
+            <h2 className="mb-6 font-display text-5xl leading-none tracking-wide text-dark md:text-7xl">THE REVIEWER</h2>
+            <div className="grid gap-5 font-serif text-base leading-8 text-text-muted md:text-lg md:leading-9">
+              <p>
+                Swati is a Product Engineer in the Waitrose Digital team at John Lewis Partnership, specialising in quality.
+                Her work focuses on creating seamless and innovative digital experiences — ensuring every user journey is
+                rigorously tested, every edge case considered, and every release meets the highest standard.
+              </p>
+              <p>
+                Her professional philosophy is simple: “My strength is paying attention to minute details — in software,
+                in process, and now in food.”
+              </p>
+              <p>
+                The Food Audit is Swati&apos;s passion project. Applying a quality-engineering mindset to food culture, she
+                visits local restaurants, cafes, and food spots with the same lens she uses at work: product integrity,
+                operational flow, sensory quality control, and value.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
-            {/* Left column */}
-            <ScrollReveal>
-              <div>
-                <h2
-                  className="mb-6"
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 'clamp(1.8rem, 3.5vw, 3rem)',
-                    color: 'var(--color-primary)',
-                    letterSpacing: '0.06em',
-                  }}
-                >
-                  WHAT IS THE FOOD AUDIT?
-                </h2>
-                <p
-                  className="text-base leading-relaxed mb-5"
-                  style={{
-                    fontFamily: "'Special Elite', Georgia, serif",
-                    color: 'var(--color-text)',
-                    lineHeight: 1.85,
-                  }}
-                >
-                  The Food Audit is a food review series applying quality engineering
-                  principles to the dining experience. Every visit is a structured evaluation
-                  that goes beyond &ldquo;was it nice?&rdquo; and asks &ldquo;how did it perform?&rdquo;
-                </p>
-                <p
-                  className="text-base leading-relaxed mb-5"
-                  style={{
-                    fontFamily: "'Special Elite', Georgia, serif",
-                    color: 'var(--color-text)',
-                    lineHeight: 1.85,
-                  }}
-                >
-                  As a quality engineer by profession, I apply the same analytical rigour
-                  I use in software development to restaurants, cafes, and food experiences.
-                  The result is a review that captures what data alone cannot.
-                </p>
-                <p
-                  className="text-base leading-relaxed"
-                  style={{
-                    fontFamily: "'Special Elite', Georgia, serif",
-                    color: 'var(--color-text)',
-                    lineHeight: 1.85,
-                  }}
-                >
-                  From operational flow and service lead times to sensory quality control
-                  and product integrity, every aspect of the experience is measured,
-                  documented, and shared.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            {/* Right column */}
-            <ScrollReveal delay={200}>
-              <div>
-                <h2
-                  className="mb-6"
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 'clamp(1.8rem, 3.5vw, 3rem)',
-                    color: 'var(--color-primary)',
-                    letterSpacing: '0.06em',
-                  }}
-                >
-                  THE METHODOLOGY
-                </h2>
-                {[
-                  { label: 'PRODUCT INTEGRITY', text: "Does the food live up to the brand's promise? Are the ingredients what they claim to be?" },
-                  { label: 'OPERATIONAL FLOW', text: 'How efficient is the service pipeline from order to table? Where are the bottlenecks?' },
-                  { label: 'SENSORY QC', text: 'Taste, texture, temperature, presentation. The qualitative signals that analytics cannot replicate.' },
-                  { label: 'ATMOSPHERE', text: 'Setting, user personas, vibe. The environmental context that frames the experience.' },
-                  { label: 'VALUE', text: 'Does the price point match the quality delivered? What is the cost-to-experience ratio?' },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="mb-5 pb-5 border-b"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <div
-                      className="text-sm mb-1"
-                      style={{
-                        fontFamily: "'Bebas Neue', sans-serif",
-                        color: 'var(--color-dark)',
-                        letterSpacing: '0.1em',
-                      }}
-                    >
-                      {item.label}
-                    </div>
-                    <p
-                      className="text-sm leading-relaxed opacity-70"
-                      style={{
-                        fontFamily: "'Special Elite', Georgia, serif",
-                        color: 'var(--color-text)',
-                      }}
-                    >
-                      {item.text}
-                    </p>
-                  </div>
+      <section className="section-blush px-5 py-16 sm:px-8 md:py-20">
+        <div className="mx-auto grid max-w-screen-xl gap-10 lg:grid-cols-2">
+          <ScrollReveal>
+            <div className="rounded-[8px] bg-white p-6 shadow-card sm:p-8">
+              <h2 className="mb-6 font-display text-5xl leading-none tracking-wide text-primary md:text-6xl">QUALITY ENGINEERING</h2>
+              <ul className="grid gap-4">
+                {experience.map((item) => (
+                  <li key={item} className="border-b border-border-muted pb-4 font-serif text-sm leading-7 text-text-muted last:border-b-0">
+                    {item}
+                  </li>
                 ))}
-              </div>
-            </ScrollReveal>
+              </ul>
+            </div>
+          </ScrollReveal>
 
-          </div>
+          <ScrollReveal delay={140}>
+            <div className="rounded-[8px] bg-white p-6 shadow-card sm:p-8">
+              <h2 className="mb-6 font-display text-5xl leading-none tracking-wide text-primary md:text-6xl">THE FOOD AUDIT</h2>
+              <p className="mb-6 font-serif text-base leading-8 text-text-muted">
+                The result is a structured, honest review format that goes far beyond a star rating. Each post examines
+                what worked, what broke down, and what the venue experience really delivers.
+              </p>
+              <ul className="grid gap-4">
+                {givesReaders.map((item) => (
+                  <li key={item} className="border-b border-border-muted pb-4 font-serif text-sm leading-7 text-text-muted last:border-b-0">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ===== IMAGE + BIO ===== */}
-      <section className="section-blush py-20 px-8">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-            <ScrollReveal>
-              <div
-                className="relative h-80 lg:h-[28rem] overflow-hidden hover-zoom"
-                style={{ borderRadius: '6px' }}
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
-                  alt="Food from the audit"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  unoptimized
-                />
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={150}>
-              <div>
-                <h2
-                  className="mb-6"
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                    color: 'var(--color-dark)',
-                    letterSpacing: '0.04em',
-                  }}
-                >
-                  QUALITY ENGINEERING<br />MEETS FOOD CULTURE
-                </h2>
-                <p
-                  className="text-base leading-relaxed mb-5"
-                  style={{
-                    fontFamily: "'Special Elite', Georgia, serif",
-                    color: 'var(--color-text)',
-                    lineHeight: 1.85,
-                  }}
-                >
-                  Based in London, I review restaurants, cafes, and food experiences through
-                  the lens of a quality engineer. My background in software quality assurance
-                  gives me a structured, analytical approach that brings something different
-                  to food criticism.
-                </p>
-                <p
-                  className="text-base leading-relaxed mb-8"
-                  style={{
-                    fontFamily: "'Special Elite', Georgia, serif",
-                    color: 'var(--color-text)',
-                    lineHeight: 1.85,
-                  }}
-                >
-                  I originally published these audits on LinkedIn, where they found an audience
-                  among people who appreciated a more rigorous take on the dining experience.
-                  This site is where the series lives in full.
-                </p>
-                <Link href="/reviews" className="btn-primary">
-                  READ THE AUDITS
-                </Link>
-              </div>
-            </ScrollReveal>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ===== BOTTOM CTA ===== */}
-      <section
-        className="py-16 px-8 text-center"
-        style={{ backgroundColor: 'var(--color-dark)' }}
-      >
+      <section className="px-5 py-16 text-center sm:px-8 md:py-20" style={{ backgroundColor: 'var(--color-dark)' }}>
         <ScrollReveal>
-          <h2
-            className="mb-4"
-            style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              color: 'var(--color-white)',
-              letterSpacing: '0.04em',
-            }}
-          >
-            START READING
-          </h2>
-          <p
-            className="mb-8 text-base opacity-60"
-            style={{
-              fontFamily: "'Special Elite', Georgia, serif",
-              color: 'var(--color-cream)',
-            }}
-          >
-            Three audits and counting. More coming soon.
+          <h2 className="mb-6 font-display text-5xl leading-none tracking-wide text-white md:text-7xl">READ THE FOOD AUDIT</h2>
+          <p className="mx-auto mb-8 max-w-2xl font-serif text-base leading-8 text-cream opacity-75">
+            Start with Swati&apos;s structured reviews of The Moon, Dulcis Gelato & Pasticcini, and Daisy&apos;s in the Park.
           </p>
-          <Link href="/reviews" className="btn-ghost">
-            VIEW ALL REVIEWS
-          </Link>
+          <Link href="/reviews" className="btn-primary">READ THE REVIEWS</Link>
         </ScrollReveal>
       </section>
     </>

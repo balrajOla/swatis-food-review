@@ -45,29 +45,13 @@ export default async function HomePage() {
     <>
       {/* ===== SECTION 1: HERO PANELS ===== */}
       <section
-        className="relative flex"
-        style={{ minHeight: '100vh' }}
+        className="relative flex min-h-[calc(100vh-104px)] overflow-hidden md:min-h-screen"
       >
-        {/* Brand name overlay */}
-        <div
-          className="absolute top-8 left-8 z-20 pointer-events-none"
-          style={{
-            fontFamily: "'Bebas Neue', sans-serif",
-            color: 'var(--color-white)',
-            fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
-            letterSpacing: '0.06em',
-            lineHeight: 1.1,
-            textShadow: '0 2px 12px rgba(0,0,0,0.5)',
-          }}
-        >
-          SWATI&apos;S<br />FOOD REVIEW
-        </div>
-
         {HERO_PANELS.map((panel, i) => (
           <Link
             key={panel.slug}
             href={`/reviews/${panel.slug}`}
-            className="hero-panel group"
+            className={`hero-panel group ${i > 0 ? 'hidden md:block' : 'block'}`}
             style={{ flex: 1 }}
           >
             {/* Background image */}
@@ -96,10 +80,10 @@ export default async function HomePage() {
                 className="text-right"
                 style={{
                   fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: 'clamp(4rem, 8vw, 7rem)',
-                  lineHeight: 1,
+                  fontSize: 'clamp(6rem, 15vw, 14rem)',
+                  lineHeight: 0.9,
                   color: 'transparent',
-                  WebkitTextStroke: '2px rgba(255,255,255,0.7)',
+                  WebkitTextStroke: '2px rgba(255,255,255,0.4)',
                   letterSpacing: '-0.02em',
                   marginTop: '4rem',
                 }}
@@ -108,7 +92,7 @@ export default async function HomePage() {
               </div>
 
               {/* Bottom text */}
-              <div className="pb-2">
+              <div className="hero-panel-text pb-2">
                 <div
                   className="text-xs uppercase tracking-widest mb-2 opacity-70"
                   style={{
@@ -143,8 +127,7 @@ export default async function HomePage() {
       </section>
 
       {/* ===== SECTION 2: TAGLINE BAND ===== */}
-      <section
-        className="py-24 px-8 text-center"
+      <section className="px-5 py-24 text-center sm:px-8"
         style={{ backgroundColor: 'var(--color-dark)' }}
       >
         <ScrollReveal>
@@ -174,11 +157,11 @@ export default async function HomePage() {
       </section>
 
       {/* ===== SECTION 3: FEATURED REVIEWS EDITORIAL GRID ===== */}
-      <section className="section-cream py-20 px-8">
+      <section className="section-cream px-5 py-20 sm:px-8">
         <div className="max-w-screen-xl mx-auto">
 
           <ScrollReveal>
-            <div className="flex items-end justify-between mb-12 border-b pb-4" style={{ borderColor: 'var(--color-border)' }}>
+            <div className="mb-12 flex flex-col gap-3 border-b pb-4 sm:flex-row sm:items-end sm:justify-between" style={{ borderColor: 'var(--color-border)' }}>
               <h2
                 style={{
                   fontFamily: "'Bebas Neue', sans-serif",
@@ -223,7 +206,7 @@ export default async function HomePage() {
       </section>
 
       {/* ===== SECTION 4: AUDIT PHILOSOPHY TABLE ===== */}
-      <section className="section-green py-20 px-8">
+      <section className="section-green px-5 py-20 sm:px-8">
         <div className="max-w-screen-xl mx-auto">
 
           <ScrollReveal>
@@ -287,7 +270,7 @@ export default async function HomePage() {
       </section>
 
       {/* ===== SECTION 5: ABOUT STRIP ===== */}
-      <section className="section-blush py-20 px-8">
+      <section className="section-blush px-5 py-20 sm:px-8">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -326,7 +309,7 @@ export default async function HomePage() {
             {/* Right image */}
             <ScrollReveal delay={200}>
               <div
-                className="relative h-80 lg:h-[26rem] rounded-sm overflow-hidden hover-zoom"
+                className="relative h-72 overflow-hidden rounded-sm hover-zoom sm:h-80 lg:h-[26rem]"
                 style={{ borderRadius: '6px' }}
               >
                 <Image

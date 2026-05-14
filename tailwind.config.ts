@@ -23,6 +23,7 @@ export default {
         serif:   ['Special Elite', 'Georgia', 'serif'],
         display: ['Bebas Neue', 'sans-serif'],
         sans:    ['Inter', 'system-ui', 'sans-serif'],
+        ui:      ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         soft: '0 24px 80px rgba(16,16,16,0.12)',
