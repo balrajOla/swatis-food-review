@@ -164,16 +164,6 @@ export default async function HomePage() {
         ))}
       </section>
 
-      <div className="px-5 pb-6 pt-1 text-center md:py-8">
-        <p className="mb-4 font-ui text-[0.62rem] uppercase tracking-[0.24em] text-text-muted md:hidden">Swipe through featured audits</p>
-        <Link href="/reviews" className="btn-outline md:hidden">
-          READ ALL REVIEWS
-        </Link>
-        <Link href="/reviews" className="btn-ghost hidden md:inline-block">
-          READ ALL REVIEWS
-        </Link>
-      </div>
-
       {/* ===== SECTION 2: TAGLINE BAND ===== */}
       <section className="px-5 py-24 text-center sm:px-8"
         style={{ backgroundColor: 'var(--color-dark)' }}
