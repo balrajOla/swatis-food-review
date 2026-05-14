@@ -100,13 +100,6 @@ export default async function HomePage() {
             ))}
           </div>
         </div>
-
-        <div className="px-5 pb-6 pt-1 text-center">
-          <p className="mb-4 font-ui text-[0.62rem] uppercase tracking-[0.24em] text-text-muted">Swipe through featured audits</p>
-          <Link href="/reviews" className="btn-outline">
-            READ ALL REVIEWS
-          </Link>
-        </div>
       </section>
 
       <section className="relative hidden min-h-screen overflow-hidden md:flex">
@@ -150,7 +143,7 @@ export default async function HomePage() {
                 {panel.num}
               </div>
 
-              <div className="hero-panel-text max-w-[18rem] pb-2 lg:max-w-[22rem]">
+              <div className="hero-panel-text max-w-[18rem] pb-8 lg:max-w-[22rem] lg:pb-10">
                 <div className="mb-2 font-ui text-xs uppercase tracking-widest text-cream opacity-70">
                   {panel.location}
                 </div>
@@ -169,13 +162,17 @@ export default async function HomePage() {
             </div>
           </Link>
         ))}
-
-        <div className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2">
-          <Link href="/reviews" className="btn-ghost">
-            READ ALL REVIEWS
-          </Link>
-        </div>
       </section>
+
+      <div className="px-5 pb-6 pt-1 text-center md:py-8">
+        <p className="mb-4 font-ui text-[0.62rem] uppercase tracking-[0.24em] text-text-muted md:hidden">Swipe through featured audits</p>
+        <Link href="/reviews" className="btn-outline md:hidden">
+          READ ALL REVIEWS
+        </Link>
+        <Link href="/reviews" className="btn-ghost hidden md:inline-block">
+          READ ALL REVIEWS
+        </Link>
+      </div>
 
       {/* ===== SECTION 2: TAGLINE BAND ===== */}
       <section className="px-5 py-24 text-center sm:px-8"
